@@ -1,4 +1,4 @@
-function [des, acc, vel, indexbc] = truss_dyn_dfc(nodes, elem, bc, ti, tf, dt, F, alfa_damp, beta_damp, ngl, nnos, sdof, nnel, N, nelem)
+function [des, acc, vel, indexbc] = truss_dyn_df(nodes, elem, bc, ti, tf, dt, F, alfa_damp, beta_damp, ngl, nnos, sdof, nnel, N, nelem)
 
 %% mount the system of equations using FEM
 [Mef, Cef, Kef, Fef, iddof, indexnodof2, nidof, sdof, ngl] = truss_FEM(nodes, elem, bc, alfa_damp, beta_damp, N, F, nelem, ngl, sdof, nnos, nnel);
@@ -9,6 +9,6 @@ des = zeros(nidof,1);   % displacement
 acc = zeros(nidof,1);   % acceleration
 
 %% central difference for time integration
-[acc, vel, des] = MDC(N, dt, Kef, Mef, Cef, Fef, acc, vel, des, ngl, elem, nodes, bc, nnel);
+[acc, vel, des] = dif_central(N, dt, Kef, Mef, Cef, Fef, acc, vel, des, ngl, elem, nodes, bc, nnel);
 
 end

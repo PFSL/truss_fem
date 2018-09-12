@@ -25,8 +25,8 @@ for el=1:nelem
     end
         
     % local mass and stiffness evaluation
-    ipt = 1; % consistent
-%     ipt = 2; % lumped
+%     ipt = 1; % consistent
+    ipt = 2; % lumped
     [k_loc, m_loc] = stiff_local2d(L, A, E, rho, beta, ipt);
     
     % assembly matrix
