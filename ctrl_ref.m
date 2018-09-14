@@ -67,7 +67,16 @@ nodal_val = [2];   % dof to be ploted
 type_line = 1;    % 0->full | 1->traced
 plot_acc_des_vel(nodes, elem, ngl, magnif, des_df, acc_df, vel_df, nnel, t, nodal_val, type_line)
 
+hold on
 
+%% numerical solver - FEM with newark method
+[des_df, acc_df, vel_df] = truss_dyn_nmk(nodes, elem, bc, ti, tf, dt, F, alfa_damp, beta_damp, ngl, nnos, sdof, nnel, N, nelem);
+
+% plot acceleration, displacement and velocity of a single dof
+magnif = 1;         % magnification factor
+nodal_val = [2];   % dof to be ploted
+type_line = 2;    % 0->full | 1->traced | 2->doted
+plot_acc_des_vel(nodes, elem, ngl, magnif, des_df, acc_df, vel_df, nnel, t, nodal_val, type_line)
 
 
 % %% numerical solver - FEM with newmark method
