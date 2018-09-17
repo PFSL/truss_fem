@@ -54,5 +54,28 @@ elseif type_line == 1
         ylabel('Acceleration (m/s^2)')
         hold on
     end
+elseif type_line == 2
+    for i=1:nn_val
+
+        no = nodal_val(i); % dof
+
+        % plot displacements value in time
+        subplot(3,1,1); plot(t,des(no,:),'b-.');
+        xlabel('Time (seconds)')
+        ylabel('Displacement (m)')
+        hold on
+
+        % plot velocities value in time
+        subplot(3,1,2); plot(t,vel(no,:),'r-.');
+        xlabel('Time (seconds)')
+        ylabel('Speed (m/s)')
+        hold on
+
+        % plot accelerations value in time
+        subplot(3,1,3); plot(t,acc(no,:),'k-.');
+        xlabel('Time (seconds)')
+        ylabel('Acceleration (m/s^2)')
+        hold on
+    end
 end
 end
