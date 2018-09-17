@@ -39,7 +39,7 @@ for it=2:(nt)
     acc(:,it) = (1./(alpha*(dt^2)))*(des(:,it) - des(:,it-1)) - (1./(alpha*dt)*vel(:,it-1) - (1./(2*alpha)-1.)*acc(:,it-1));
     
     % velocity update
-    vel(:,it) = vel(:,it-1) + (1.-beta)*dt*acc(:,it-1) + beta*dt*acc(:,it);
+    vel(:,it) = vel(:,it-1) + (1.-beta)*dt*acc(:,it-1) + beta*dt*acc(:,it-1);
     
 end
 
