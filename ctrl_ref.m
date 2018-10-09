@@ -86,6 +86,11 @@ des_nmk
 
 
 
+nat_freq(nodes, elem, bc, ti, tf, dt, F, alfa_damp, beta_damp, ngl, nnos, sdof, nnel, N, nelem)
+
+
+
+
 
 % %% numerical solver - FEM with newmark method
 % [des_dfc, acc_dfc, vel_dfc, indexbc] = truss_dyn_dfc(nodes, elem, bc, ti, tf, dt, F, alfa_damp, beta_damp);
